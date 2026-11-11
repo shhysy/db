@@ -108,7 +108,7 @@ http://localhost:8000
 - **调整蓝白商务风视觉**：优先编辑 `corporate.css`，避免不必要地覆盖原始样式。
 - **调整滚动、粒子或卡片动效**：检查 `tech.js` 和 `tech.css`。
 - **调整首屏动画**：检查 `hero-impact.js` 和 `hero-impact.css`。
-- **调整 ANC 演示**：检查 `anc-audio.js` 及 `tech.css`、`tech-light.css)。
+- **调整 ANC 演示**：检查 `anc-audio.js` 及 `tech.css`、`tech-light.css`。
 - **替换图片**：将图片放入 `images/`，并同步检查 HTML 中的图片路径和 alt 描述。
 
 ### 修改后建议检查
