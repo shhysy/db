@@ -1,0 +1,41 @@
+/* ===== 首屏强冲击力 ===== */
+/* 1. 标题：加大 + 渐变流光 */
+.hero h1{font-size:68px;letter-spacing:-2px;line-height:1.15}
+.hero h1 em{background:linear-gradient(100deg,#0879c9 0%,#38b8e8 30%,#18c4a0 55%,#0879c9 80%);background-size:250% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5s linear infinite}
+@keyframes shine{to{background-position:-250% 0}}
+.hero h1 .ch{display:inline-block;opacity:0;transform:translateY(40px) scale(.9);filter:blur(8px);
+  animation:chIn .7s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i) * 70ms + 150ms)}
+@keyframes chIn{to{opacity:1;transform:none;filter:none}}
+
+/* 2. 主按钮脉冲光环 */
+.hero .btn-primary{position:relative}
+.hero .btn-primary::before{content:"";position:absolute;inset:0;border-radius:inherit;border:2px solid #38b8e8;animation:pulse 2s ease-out infinite;pointer-events:none}
+@keyframes pulse{0%{transform:scale(1);opacity:.9}100%{transform:scale(1.25,1.6);opacity:0}}
+
+/* 3. 鼠标聚光 + 背景光晕缓慢游动 */
+.hero::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(500px circle at var(--hx,70%) var(--hy,40%),#38b8e83d,transparent 60%)}
+.hero::after{content:"";position:absolute;width:520px;height:520px;right:-120px;top:-160px;border-radius:50%;z-index:0;pointer-events:none;
+  background:radial-gradient(circle,#7a5cff22,transparent 65%);animation:drift 12s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(-140px,120px)}}
+
+/* 4. 首屏图片：呼吸浮动 + 悬停发光 */
+.hero-card{animation:bob 6s ease-in-out infinite;box-shadow:0 26px 60px #0879c933,0 0 0 1px #38b8e855}
+.hero-card-2{animation-delay:-3s}
+.hero-card:hover{box-shadow:0 30px 70px #0879c955,0 0 30px #38b8e888}
+@keyframes bob{50%{transform:translateY(-10px)}}
+
+/* 5. 数字更醒目 */
+.hero-stats strong{font-size:40px;background:linear-gradient(120deg,#07559b,#38b8e8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-stats strong span{-webkit-text-fill-color:#38b8e8}
+
+/* 6. 底部流动声波 */
+.hero-wave{position:absolute;left:0;right:0;bottom:0;height:90px;z-index:1;pointer-events:none;opacity:.55}
+.hero-wave svg{width:200%;height:100%;animation:waveMove 14s linear infinite}
+.hero-wave svg:nth-child(2){position:absolute;left:0;top:0;animation-duration:9s;animation-direction:reverse;opacity:.7}
+@keyframes waveMove{to{transform:translateX(-50%)}}
+
+@media(max-width:900px){.hero h1{font-size:46px}.hero-stats strong{font-size:32px}}
+@media(prefers-reduced-motion:reduce){.hero h1 .ch{animation:none;opacity:1;transform:none;filter:none}
+  .hero h1 em,.hero-card,.hero .btn-primary::before,.hero::after,.hero-wave svg{animation:none}}
