@@ -1,0 +1,45 @@
+/* ===== 科技互动效果 ===== */
+.scroll-progress{position:fixed;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,#38b8e8,#0879c9,#7a5cff);z-index:60;box-shadow:0 0 10px #38b8e8}
+.hero{position:relative;overflow:hidden}
+#heroCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:auto}
+.hero-content{position:relative;z-index:1}
+
+/* 滚动渐显 */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* 卡片倾斜 + 光斑 */
+.tilt{transform-style:preserve-3d;transition:transform .15s ease-out,box-shadow .3s,opacity .7s;position:relative;will-change:transform}
+.tilt::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;
+  background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),#38b8e833,transparent 60%)}
+.tilt:hover::after{opacity:1}
+.tilt:hover{box-shadow:0 18px 40px #0879c933}
+
+/* ANC 演示 */
+.anc-section{background:linear-gradient(180deg,#071a2e,#0b2c4d);color:#fff;padding:70px 0}
+.anc-wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+.anc-head{text-align:center;margin-bottom:26px}
+.anc-head .section-en{color:#38b8e8;letter-spacing:3px;font-size:13px}
+.anc-head h2{margin:8px 0;font-size:32px;color:#fff}
+.anc-head h2 span{color:#38b8e8}
+.anc-head p{color:#9db8d0;margin:0}
+.anc-panel{background:#ffffff0d;border:1px solid #38b8e844;border-radius:16px;padding:20px;backdrop-filter:blur(6px)}
+#ancCanvas{width:100%;height:240px;display:block;border-radius:10px;background:#04111f}
+.anc-controls{display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between;margin-top:18px}
+.anc-switch{display:flex;align-items:center;gap:10px;cursor:pointer;user-select:none}
+.anc-switch input{display:none}
+.anc-switch i{width:52px;height:28px;border-radius:14px;background:#41566b;position:relative;transition:.3s}
+.anc-switch i::after{content:"";position:absolute;left:3px;top:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:.3s}
+.anc-switch input:checked+i{background:#18c4a0;box-shadow:0 0 14px #18c4a0aa}
+.anc-switch input:checked+i::after{left:27px}
+.anc-slider{display:flex;align-items:center;gap:10px;flex:1;min-width:220px}
+.anc-slider input{flex:1;accent-color:#38b8e8}
+.anc-readout{display:flex;gap:20px}
+.anc-readout div{text-align:center}
+.anc-readout b{display:block;font-size:26px;color:#38b8e8;font-variant-numeric:tabular-nums}
+.anc-readout small{color:#9db8d0}
+.anc-legend{display:flex;gap:18px;margin-top:10px;font-size:13px;color:#9db8d0}
+.anc-legend span::before{content:"";display:inline-block;width:18px;height:3px;margin-right:6px;vertical-align:middle}
+.anc-legend .l1::before{background:#ff6b6b}.anc-legend .l2::before{background:#38b8e8}.anc-legend .l3::before{background:#18c4a0}
+@media(max-width:700px){.anc-head h2{font-size:24px}#ancCanvas{height:190px}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.tilt{transition:none}}

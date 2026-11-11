@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 317" font-family="Microsoft YaHei,PingFang SC,sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4fbff"/><stop offset="1" stop-color="#d8efff"/></linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f7fc8"/><stop offset="1" stop-color="#0a4f8f"/></linearGradient>
+    <radialGradient id="quiet" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#18c4a0" stop-opacity=".45"/><stop offset="1" stop-color="#18c4a0" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="980" height="317" fill="url(#bg)"/>
+  <g stroke="#9fd0ee" stroke-opacity=".35"><path d="M0 60H980M0 120H980M0 180H980M0 240H980"/><path d="M80 0V317M240 0V317M400 0V317M560 0V317M720 0V317M880 0V317"/></g>
+  <!-- 汽车 -->
+  <g transform="translate(250 90)">
+    <ellipse cx="240" cy="168" rx="250" ry="14" fill="#0a4f8f" opacity=".15"/>
+    <path d="M10 130 C10 110 30 100 70 96 L130 50 C145 38 165 34 190 34 L300 34 C330 34 350 46 372 72 L420 96 C455 102 475 112 475 130 L475 148 L10 148 Z" fill="url(#body)"/>
+    <path d="M142 58 L190 44 L240 44 L240 94 L108 94 Z" fill="#cfeaff" opacity=".9"/>
+    <path d="M252 44 L300 44 C318 44 332 54 350 78 L360 94 L252 94 Z" fill="#cfeaff" opacity=".9"/>
+    <circle cx="110" cy="148" r="30" fill="#123e68"/><circle cx="110" cy="148" r="14" fill="#9fd0ee"/>
+    <circle cx="385" cy="148" r="30" fill="#123e68"/><circle cx="385" cy="148" r="14" fill="#9fd0ee"/>
+    <!-- 车内安静区 -->
+    <ellipse cx="230" cy="76" rx="120" ry="42" fill="url(#quiet)"/>
+    <!-- 乘客 -->
+    <circle cx="205" cy="68" r="9" fill="#123e68"/><path d="M193 94 C193 80 217 80 217 94Z" fill="#123e68"/>
+    <!-- 发动机 -->
+    <rect x="22" y="104" width="52" height="30" rx="5" fill="#ff6b6b" opacity=".9"/>
+    <text x="48" y="124" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">ENGINE</text>
+  </g>
+  <!-- 噪声（红）从发动机向外 -->
+  <g fill="none" stroke="#ff6b6b" stroke-width="3" stroke-linecap="round">
+    <path d="M300 188 q-14 -22 0 -44"/><path d="M276 196 q-24 -34 0 -68" opacity=".7"/><path d="M252 204 q-34 -46 0 -92" opacity=".45"/>
+  </g>
+  <!-- 反相声波（蓝）从扬声器向内 -->
+  <g fill="none" stroke="#38b8e8" stroke-width="3" stroke-linecap="round">
+    <path d="M395 150 q14 -16 0 -34"/><path d="M416 156 q22 -26 0 -52" opacity=".7"/><path d="M437 162 q30 -36 0 -72" opacity=".45"/>
+  </g>
+  <circle cx="380" cy="170" r="6" fill="#38b8e8"/><text x="380" y="196" font-size="11" fill="#07559b" text-anchor="middle">扬声器</text>
+  <!-- 波形对比 -->
+  <g transform="translate(40 262)" fill="none" stroke-width="2.6" stroke-linecap="round">
+    <path stroke="#ff6b6b" d="M0 20 Q15 -6 30 20 T60 20 T90 20 T120 20 T150 20"/>
+    <text x="0" y="46" font-size="11" fill="#c0504f" stroke="none">噪声</text>
+    <path stroke="#38b8e8" d="M190 20 Q205 46 220 20 T250 20 T280 20 T310 20 T340 20"/>
+    <text x="190" y="46" font-size="11" fill="#07559b" stroke="none">反相抗噪声</text>
+    <path stroke="#18c4a0" d="M380 20 H540"/>
+    <text x="380" y="46" font-size="11" fill="#0d8a70" stroke="none">残余噪声 ≈ 0</text>
+  </g>
+  <!-- 标题 -->
+  <g>
+    <rect x="690" y="52" width="250" height="150" rx="12" fill="#fff" opacity=".92" stroke="#c9e7f8"/>
+    <text x="710" y="86" font-size="13" fill="#38b8e8" letter-spacing="2">ANC</text>
+    <text x="710" y="118" font-size="24" font-weight="700" fill="#123e68">主动降噪</text>
+    <text x="710" y="146" font-size="13" fill="#47657f">自适应前馈控制</text>
+    <text x="710" y="168" font-size="13" fill="#47657f">20–200Hz 阶次噪声</text>
+    <text x="710" y="190" font-size="13" fill="#47657f">以声消声 · 静享旅程</text>
+  </g>
+</svg>
